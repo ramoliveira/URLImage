@@ -16,15 +16,19 @@ Hence, why not create a shortcut?
 
 URLImage is very straight foward to use.
 
-```
+```swift
 URLImage(URL(string: "https://cdn.pixabay.com/photo/2020/12/03/14/35/horror-5800684_960_720.jpg")!)
 ```
 
 Add this to your SwiftUI View and it should render as the view is presented.
 
+Like this:
+
+<img src="https://github.com/ramoliveira/URLImage/blob/810c7b99cebac3ad0bb6d7f66cfe987811c2676b/Sources/README%20Pics/rendered-URLImage.png" alt="Rendered URLImage" width="400"/>
+
 But, if you want to resize your view. Use like this:
 
-```
+```swift
 URLImage(URL(string: "https://cdn.pixabay.com/photo/2020/12/03/14/35/horror-5800684_960_720.jpg")!) { image in
     image.resizable()
 }.frame(width: 200, height: 200)
