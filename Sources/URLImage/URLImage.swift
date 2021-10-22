@@ -20,7 +20,11 @@ public struct URLImage: View {
     
     public var body: some View {
         if service.isLoading {
-            ProgressView()
+            if #available(iOS 14.0, *) {
+                ProgressView()
+            } else {
+                Text("Loading...")
+            }
         } else {
             content(Image(uiImage: service.image))
         }
@@ -29,6 +33,9 @@ public struct URLImage: View {
 
 struct URLImage_Previews: PreviewProvider {
     static var previews: some View {
-        URLImage()
+        VStack {
+            Text("Hello, world!")
+            URLImage(URL(string: "https://cdn.pixabay.com/photo/2020/12/03/14/35/horror-5800684_960_720.jpg")!)
+        }
     }
 }
